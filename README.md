@@ -49,7 +49,7 @@ CREATE TABLE sales
 
 ```
 
--- Q.1 How many people in each city are estimated to consume coffee, given that 25% of the population does?
+### Q.1 How many people in each city are estimated to consume coffee, given that 25% of the population does?
 ```sql
 SELECT 
 	city_name,
@@ -60,7 +60,7 @@ SELECT
 FROM city
 ORDER BY 2 DESC
 ```
--- Q.2 What is the total revenue generated from coffee sales across all cities in the last quarter of 2023?
+### Q.2 What is the total revenue generated from coffee sales across all cities in the last quarter of 2023?
 
 ```sql
 SELECT 
@@ -89,7 +89,7 @@ GROUP BY 1
 ORDER BY 2 DESC
 
 ```
--- Q.3 How many units of each coffee product have been sold?
+### Q.3 How many units of each coffee product have been sold?
 ```sql
 SELECT 
 	p.product_name,
@@ -101,7 +101,7 @@ ON s.product_id = p.product_id
 GROUP BY 1
 ORDER BY 2 DESC
 ```
--- Q.4 What is the average sales amount per customer in each city?
+### Q.4 What is the average sales amount per customer in each city?
 
 -- city abd total sale
 -- no cx in each these city
@@ -125,7 +125,7 @@ GROUP BY 1
 ORDER BY 2 DESC
 ```
 
--- Q.5 Provide a list of cities along with their populations and estimated coffee consumers. Return city_name, total current cx, estimated coffee consumers (25%)
+### Q.5 Provide a list of cities along with their populations and estimated coffee consumers. Return city_name, total current cx, estimated coffee consumers (25%)
 ```sql
 WITH city_table as 
 (
@@ -158,7 +158,7 @@ ON city_table.city_name = customers_table.city_name
 
 ```
 
--- Q6 What are the top 3 selling products in each city based on sales volume?
+### Q6 What are the top 3 selling products in each city based on sales volume?
 ```sql
 SELECT * 
 FROM -- table
@@ -181,7 +181,7 @@ FROM -- table
 WHERE rank <= 3
 ```
 
--- Q.7 How many unique customers are there in each city who have purchased coffee products?
+### Q.7 How many unique customers are there in each city who have purchased coffee products?
 ```sql
 SELECT * FROM products;
 
@@ -201,7 +201,7 @@ WHERE
 GROUP BY 1
 
 ```
--- Q.8 Find each city and their average sale per customer and avg rent per customer
+### Q.8 Find each city and their average sale per customer and avg rent per customer
 ```sql
 WITH city_table
 AS
@@ -246,7 +246,7 @@ ORDER BY 4 DESC
 
 ```
 
--- Q.9 Calculate the percentage growth (or decline) in sales over different time periods (monthly)by each city
+### Q.9 Calculate the percentage growth (or decline) in sales over different time periods (monthly)by each city
 ```sql
 WITH
 monthly_sales
@@ -293,7 +293,7 @@ WHERE
 	last_month_sale IS NOT NULL	
 ```
 
--- Q.10 Identify top 3 city based on highest sales, return city name, total sale, total rent, total customers, estimated coffee consumer
+### Q.10 Identify top 3 city based on highest sales, return city name, total sale, total rent, total customers, estimated coffee consumer
 
 
 ```sql
